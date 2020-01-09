@@ -36,7 +36,7 @@ def GetUrl():
     url_head = "https://"
     url_body = input("Input url: ")
     url = url_head + url_body
-    return url
+    return url_body
 
 def SaveHtml(FileName,FileContent):
     with open(FileName,"wb") as f:
