@@ -1,7 +1,7 @@
 import urllib.request
 from urllib.error import URLError, HTTPError, ContentTooShortError
 
-def download(url, num_retries = 2, user_agent = 'wswp'):
+def Download(url, num_retries = 2, user_agent = 'wswp'):
     print('Downloading: ',url)
     request = urllib.request.Request(url)
     request.add_header('User_agent', user_agent)
@@ -21,8 +21,15 @@ def GetUrl():
     url = url_head + url_body
     return url
 
+def SaveHtml(FileName,FileContent):
+    with open(FileName,"wb") as f:
+        f.write(FileContent)
+
+
 def main():
     url = GetUrl()
-    print(download(url))
+    html = Download(url)
+    SaveHtml("bing",html)
+    print(html)
 
 main()
