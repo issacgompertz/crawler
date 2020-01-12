@@ -19,7 +19,7 @@ def Download(url, num_retries = 2, user_agent = 'wswp', charset = 'utf-8'):
         if num_retries > 0:
             if hasattr(error, 'code') and 500 <= error.code < 600:
                 return download(url, num_retries-1)
-   # print(html)
+    print(html)
     return html
 
 def CrawlSitemap(url):
